@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+}
+
+:root{
+  --main-color:#ffb43a;
+  --hover-color:hsl(37,94%,57%);
+  --body-color:#1e1e2a;
+  --container-color:#2d2e37;
+  --text-color:#fcfeff; 
+  --primary-color:#edf2fc ;
+  --secondary-color:#212121;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+img{
+    width: 100%;
+}
+.bx{
+   cursor: pointer; 
+}
+body{
+    /* background:var(--body-color);
+    color: var(--text-color); */
+    /* margin-top: -20px; */
+    background:#2d2e37; 
+    color: #fcfeff;
+    height: 1150px;
+    /* overflow: auto; */
+    
+}
+.container{
+    max-width: 1068px;
+    margin:auto;
+    width:100%;
+}
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 80px;
+    /* background: var(--body-color); */
+    background:#1e1e2a;
+    z-index: 100;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+.logo{
+    font-size: 1.4rem;
+    /* color: var(--text-color); */
+    color:#fcfeff;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 auto 0 0;
+}
+.logo span{
+    /* color: var(--main-color); */
+    color: #ffb43a;
+    font-family: cursive;
+    font-size: xx-large;
+
+}
+.search-box{
+    max-width: 240px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 0.7rem;
+    padding: 8px 15px;
+    /* background: var(--container-color); */
+    background:#2d2e37;
+    border-radius: 4rem;
+    margin-right: 1rem;
+}
+.search-box .bx{
+    font-size: 1.1rem;
+}
+.search-box .bx:hover{
+    /* color: var(--main-color); */
+    color: #ffb43a;
+}
+#search-input{
+    width: 100%;
+    border: none;
+    outline: none;
+    /* color: var(--text-color); */
+    color: #fcfeff;
+    background: transparent;
+    font-size: 0.938rem;
+}
+.user{
+    display: flex;
+}
+.user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.navbar{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.1rem;
+}
+.nav-link{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   color: #b7b7b7; 
+}
+.nav-link:hover,
+.nav-active{
+    /* color: var(--text-color); */
+    color: #fcfeff;
+    transition: 0.3s all linear;
+    transform: scale(1.1);
+}
+.nav-link .bx{
+    font-size: 1.6rem;
+}
+.nav-link-title{
+    font-size: 0.7rem;
+}
+section{
+  padding: 3rem 0 2rem;
+}
+.home{
+  position: relative;
+  min-height: 470px;
+  display: flex;
+  align-items: center;
+  margin-top: 5rem !important;
+  border-radius: 0.5rem;
+}
+.home-img{
+  width: 100%;
+ height: 100%;
+ border-radius: 0.5rem;
+ /* z-index: -1;  */
+ object-fit: cover;
+}
+.home-text{
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  
+}
+.h1{
+  color:#fcfeff;
+  font-size: 2rem;
+  font-weight:600 ;
+  padding-left: 30px;
+  line-height: 50px;
+  text-shadow:2px 2px 8px #212121;
+}
+.home-text p{
+  font-size: 0.938rem;
+  margin: 10px 0 20px;
+  color: #ffb43a;
+  padding-left: 30px;
+}
+
+/* best selling */
+
+.best-selling{
+  position: relative;
+  top:-60px;
+  z-index: 1;
+}
+.best-selling-container{
+  position: relative;
+  /* background: #b7b7b7; */
+  background: #fff;
+  padding: 0 40px 0 0;
+  border-radius: 10px;
+}
+.sale-price{
+  position: absolute;
+  top: 40px;
+  left: 0;
+  /* background: #ff4000; */
+  background: #ffb43a;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius:25px ;
+  padding: 12px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 26px;
+  width: 260px;
+  text-align: center;
+}
+.selling-col-1{
+  width: 16%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.selling-col-2{
+  width: 46%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.selling-col-3{
+  width: 38%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.selling-left ul{
+  padding: 0;
+  margin: 0;
+}
+.selling-left ul li{
+  display: block;
+  padding: 22px;
+  background: #f5f5f5;
+  text-align: center;
+  border-bottom: 1px solid #dbdbdb;
+}
+.selling-left ul li:first-child{
+  padding-top: 130px;
+  border-top-left-radius: 10px;
+}
+.selling-left ul li:last-child{
+  border-bottom: none;
+  border-bottom-left-radius: 10px;
+}
+.selling-left ul li .count-date{
+  color: #000;
+  font-size: 30px;
+  font-weight: 800;
+  display: block;
+  letter-spacing: 0.6px;
+}
+.selling-left ul li .count-day{
+  color: #555;
+  display: block;
+  font-size: 18px;
+}
+.selling-img img{
+  width: 500px;
+  height: 574px;
+}
+.selling-heading{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.selling-heading a{
+  color: #555;
+  font-size: 28px;
+  text-transform: capitalize;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+.selling-heading a:hover{
+  color: #ffb43a;
+  
+}
+.selling-rating{
+  margin-top: 4px;
+}
+.selling-heading i{
+  color: #ffb43a;
+  margin-right: 4px;
+  font-size: 12px;
+}
+.selling-col-3 p{
+  color:   #777;
+  line-height: 22px;
+  margin: 22px 0;
+  
+}
+.selling-col-3 h3 .selling-amount{
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffb43a;
+  font-style: italic;
+}
+.selling-col-3 h3 .selling-discount{
+  color: #555;
+  font-size: 22px;
+  line-height: 18px;
+  font-weight: 600;
+  text-decoration: line-through;
+  margin-left: 10px;
+  font-style: italic;
+}
+.selling-button{
+  margin-top: 34px;
+}
+.selling-cart-btn{
+  background: #ffb43a;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 14px;
+  padding: 12px 34px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  transition: all .3s ease;
+}
+.selling-cart-btn:hover{
+  background: #c30;
+}
+.selling-cart-btn i{
+  margin-right: 4px;
+}
+
+/* footer */
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{ 
+	list-style: none;
+}
+.footer{
+  /* margin-top: 50px ; */
+	background-color:#1e1e2a;
+  padding: 70px 0;
+  font-family: 'Poppins', sans-serif;
+  position:static;
+  
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color:#ffb43a;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/* **************************SnackBar************************* */
+#snackbar {
+  visibility: hidden; /* Hidden by default */
+  min-width: 250px; /* Set a minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 to center the snackbar */
+  background-color: #333; /* Set the background color */
+  color: #fff; /* Set the text color */
+  text-align: center; /* Center the text */
+  border-radius: 2px; /* Set the border radius */
+  padding: 16px; /* Set the padding */
+  position: fixed; /* Fixed position - Sit on top of the page */
+  z-index: 1; /* Set the z-index */
+  left: 50%; /* Center the snackbar horizontally */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Fade in and out */
+}
+
+/* Fade in animation */
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+/* Fade out animation */
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+  

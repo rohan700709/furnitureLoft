@@ -1,0 +1,76 @@
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+<div id="main" style="position: fixed; margin-top: -1px;">
+  <div class="clearfix"></div>
+  <br /><br />
+  <div style="margin-top: -40px;">
+    <div class="box-8">
+      <div class="content-box">
+        <i class="bx bx-list-plus" style="position: absolute;left: 10%;top: 35px;"></i>
+        <p style="font-size: 27px; margin-top: 40px;" > Add Furniure</p>
+        <br/>
+        <form  class="form" [formGroup]="furnitureFg" (ngSubmit)="onSave() "  style="margin-top: -50px;">
+        
+              <mat-card class="shipping-card">
+                  <div class="row">
+                      <div class="col">
+                          <mat-form-field appearance="fill">
+                              <input matInput type="number" formControlName="furnitureId" placeholder="Furniture Id">
+                              <mat-error *ngIf="furnitureFg.controls['furnitureId'].hasError('required')">
+                                Enter Furniture Id
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div class="col">
+                          <mat-form-field appearance="fill">
+                              <input matInput type="text" formControlName="furnitureName" placeholder="Furniture Name">
+                              <mat-error *ngIf="furnitureFg.controls['furnitureName'].hasError('required')">
+                                Enter Furniture Name
+                              </mat-error>
+                          </mat-form-field>
+                      </div>
+      
+                  </div>
+                  <div class="row">
+                      <mat-form-field appearance="fill">
+                          <input matInput type="number" formControlName="furniturePrice" placeholder=" Furniture Price">
+                          <mat-error *ngIf="furnitureFg.controls['furniturePrice'].hasError('required')">
+                                Enter Furniture Price
+                          </mat-error>
+                      </mat-form-field>
+                  </div>
+                  <div id="snackbar" style="position: fixed !important;   z-index:10; bottom:80px; left:75% ; text-align: center;">Furniture Added...</div>
+
+                  <div class="row">
+                    <mat-form-field appearance="fill">
+                        <input matInput type="number" formControlName="furnitureRating" placeholder=" Furniture Rating">
+                        <mat-error *ngIf="furnitureFg.controls['furnitureRating'].hasError('required')">
+                            Enter Furniture Rating
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <input matInput type="text" formControlName="furnitureDescription" placeholder="Furniture Description">
+                        <mat-error *ngIf="furnitureFg.controls['furnitureDescription'].hasError('required')">
+                              Enter Furniture Description
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                     <input type="file" (change)="onFileSelected($event)">
+                     <button color="primary" mat-raised-button type="submit" (click)="onUpload()"  
+                                [disabled]="!furnitureFg.valid" style="margin-top: 5px;">Add Furniture</button>
+                     
+                       <!-- <button class="" >Upload</button>   -->
+                </mat-card>
+             
+      </form>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="clearfix"></div>

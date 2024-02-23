@@ -1,0 +1,204 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2d2e37;
+
+    /* overflow:auto;
+    height: 500px;
+    width: 1000px;
+    padding-top: 100px;
+    border-radius: 2px;
+    border-color: #f5f5f5; */
+}
+.card{
+    margin: 10px 10px;
+    position: relative;
+    width: 310px;
+    height: 480px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 10px 10px #1d0909;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+    gap:2rem; */
+}
+.card::before
+{
+    content: '';
+    position:absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+.card:hover::before
+{
+    top: -70%;
+    transform: skewY(390deg);
+}
+.card::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 8rem;
+    color: rgba(0,0,0,0.1);
+}
+.card .imgBx
+{
+    position: relative;
+    width: 290px;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+.card .imgBx img{
+    max-width: 100%;
+    transition: 0.5s;
+}
+.card:hover .imgBx img{
+    max-width: 30%;
+}
+.card .contentBx{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+ }
+ .card .contentBx h3
+ {
+    color: #555;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;   
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdbdb;
+ }
+ .card .contentBx .price{
+    font-weight: 700;
+    font-size: 30px;
+    color: #ffb43a;
+    font-style: italic;
+ }
+ .card .contentBx .buy
+ {
+    position: relative;
+    top: 200px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #fff;
+    text-decoration: none;
+    background: #ffb43a;
+    text-transform: uppercase;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px; 
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+ }
+ /* .selling-cart-btn{
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s ease;
+  }
+  .selling-cart-btn:hover{
+    background: #c30;
+  }
+  .selling-cart-btn i{
+    margin-right: 4px;
+  } */
+ .card:hover .contentBx .buy
+ {
+    top:0;
+    opacity: 1;
+    /* background: #c30; */
+ }
+ .star{
+    color: #ffb43a;
+    margin-right: 4px;
+    font-size: 15px;
+  }
+  .rating{
+    color: #555;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-style: italic;
+  }
+  .card .contentBx .description
+  {
+    position: relative;
+    opacity: 0;
+    color:   #777;
+    line-height: 22px;
+    margin: 22px 0;
+    text-align: center;
+  }
+  .card:hover .contentBx .description
+  {
+    top: 0;
+    opacity: 1;
+  }
+  /* **************************SnackBar************************* */
+#snackbar {
+  visibility: hidden; /* Hidden by default */
+  width: 300px; /* Set a minimum width */
+  height:40px;
+  margin-left: 0px; /* Divide value of min-width by 2 to center the snackbar */
+  background-color: #c30; /* Set the background color */
+  color: #fff; /* Set the text color */
+  font-size: large;
+  font-weight: bolder;
+  text-align: center; /* Center the text */
+  border-radius: 20px; /* Set the border radius */
+  padding: 8px; /* Set the padding */
+  /* position: fixed;  */
+  z-index: 1; /* Set the z-index */
+  left: 20%; /* Center the snackbar horizontally */
+  bottom: 0px; /* 30px from the bottom */
+}
+
+/* Show the snackbar */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  animation: fadein 0.5s, fadeout 0.5s 9.5s; /* Fade in and out */
+}
+
+/* Fade in animation */
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+/* Fade out animation */
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0;opacity:0;}
+}
+

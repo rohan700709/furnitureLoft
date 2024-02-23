@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Ubuntu:wght@500&display=swap');
+
+#add-fruit {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+.input-field{
+  border: 1px solid black;
+  width:30%;
+  margin-bottom: 10px;
+}
+.shipping-card {
+  width: 25%;
+  margin: 20px auto;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+  height: 3400px;
+  width: 100%;
+  background-color: #141414;
+  position:absolute;
+  z-index: 2;
+}
+.head{
+	padding:20px;
+  font-weight: bold;
+}
+
+
+
+.box{
+	width: 85%;
+	height: 100px;
+	background-color: #ffffff;
+	margin-left: 10px;
+  margin-top: 20px;
+	padding:10px;
+  border-radius: 20px;
+}
+.box:hover
+{
+  background: #b8b8b8;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-10px);
+}
+.box p{
+	 font-size: 35px;
+    color: black;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.box p span{
+	font-size: 20px;
+	font-weight: 400;
+	color: black
+}
+.bx{
+	font-size: 40px!important;
+    float: right;
+    margin-top: 35px!important;
+    color: #000000;
+    padding-right: 10px;
+}
+
+.content-box{
+	padding: 20px;
+  
+}
+
+.content-box p{
+	margin-left: 60px;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+.content-box p span{
+  float: right;
+  padding: 3px 10px;
+  font-size: 15px;
+}
+.box-8, .box-4{
+	width: 90%;
+	background-color: #f0f0f0;
+	height:100%;
+	border-radius: 20px;
+  justify-content: center;
+  margin-left: 100px !important;
+}
+
+.box-8{
+	margin-left: 30px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+td, th {
+  text-align: left;
+  padding:15px;
+  color: rgb(12, 12, 12);
+  border-bottom: 1px solid #81818140;
+}
+
+.content-box button
+{
+  background: #141414;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.content-box button:hover
+{
+  background: white;
+  border: 1px solid black;
+  color: black;
+  transition: all 0.3s ease;
+}
+/* **********************************SnackBar************************************ */
+
+
+#snackbar {
+  visibility: hidden; /* Hidden by default */
+  width: 300px; /* Set a minimum width */
+  height:40px;
+  margin-left: 0px; /* Divide value of min-width by 2 to center the snackbar */
+  background-color: #c30; /* Set the background color */
+  color: #fff; /* Set the text color */
+  font-size: large;
+  font-weight: bolder;
+  text-align: center; /* Center the text */
+  border-radius: 20px; /* Set the border radius */
+  padding: 8px; /* Set the padding */
+  /* position: fixed;  */
+  z-index: 1; /* Set the z-index */
+  left: 20%; /* Center the snackbar horizontally */
+  bottom: 0px; /* 30px from the bottom */
+}
+
+/* Show the snackbar */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  animation: fadein 0.5s, fadeout 0.5s 9.5s; /* Fade in and out */
+}
+
+/* Fade in animation */
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+/* Fade out animation */
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0;opacity:0;}
+}

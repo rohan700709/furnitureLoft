@@ -1,0 +1,60 @@
+input{
+    border:none;
+    background-color: rgba(255,255,255,0);
+    border-bottom:solid #fff;
+    size:3px;
+    margin-left: 10px;
+    width: 85%;
+    color: #fff;
+}
+
+label{
+    color: grey;
+}
+.form-group{
+    margin-top:30px;
+}
+form{
+    padding:12px;
+}
+
+#submitButton{
+    margin: 25px;
+    width: 40%;
+}
+
+
+/* **************************SnackBar************************* */
+#snackbar {
+    visibility: hidden; /* Hidden by default */
+    min-width: 250px; /* Set a minimum width */
+    margin-left: 0px; /* Divide value of min-width by 2 to center the snackbar */
+    background-color: #000000; /* Set the background color */
+    color: #ffb43a; /* Set the text color */
+    font-size: large;
+    text-align: center; /* Center the text */
+    border-radius: 20px; /* Set the border radius */
+    padding: 26px; /* Set the padding */
+    /* position: fixed;  */
+    z-index: 1; /* Set the z-index */
+    left: 60%; /* Center the snackbar horizontally */
+    bottom: 2000px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    animation: fadein 0s, fadeout 0.5s 4.5s; /* Fade in and out */
+  }
+  
+  /* Fade in animation */
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  /* Fade out animation */
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0;opacity:0;}
+  }

@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]= "loginForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="email" class='fa fa-envelope'></label>
+                    <input type="email" placeholder="Email Address" formControlName="userEmail">
+                    <span class="text-danger"
+                        *ngIf="loginForm.get('userEmail').touched && loginForm.get('userEmail').invalid"><br>Invalid
+                        Email Address</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="fa fa-lock"></label>
+                    <input type="password" placeholder="Password" formControlName="userPassword">
+                    <span class="text-danger"
+                        *ngIf="loginForm.get('userPassword').touched && loginForm.get('userPassword').invalid"><br>Invalid
+                        Password</span>
+                </div>
+
+                <div class="text-center">
+                    <button id="submitButton" type="submit" class="btn btn-danger"
+                        [disabled]="!loginForm.valid">Login</button>
+                </div>
+                <!-- <div class="text-center text-success" *ngIf="successMessage">{{successMessage}}</div> -->
+            </form>
+        </div>
+        <div id="snackbar">LoggedIn Successfully... </div>
+    </div>
+</div>

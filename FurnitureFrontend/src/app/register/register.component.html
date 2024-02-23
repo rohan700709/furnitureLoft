@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]= "regForm" (ngSubmit)= "onSubmit()">
+
+                <div class="form-group">
+                    <label for="name" class="fa fa-user"></label>
+                    <input type="text" placeholder="Enter Your Name" formControlName="userName">
+                    <span class="text-danger" *ngIf="regForm.get('userName').touched && regForm.get('userName').invalid">
+                        <br> Name is Required
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobileNumber" class="fa fa-mobile"></label>
+                    <input type="tel" placeholder="Mobile Number" formControlName="mobileNumber">
+                    <span class="text-danger" *ngIf="regForm.get('mobileNumber').touched && regForm.get('mobileNumber').invalid">
+                        <br>Invalid Mobile Number
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="fa fa-envelope"></label>
+                    <input type="email" placeholder="Email Address" formControlName="userEmail">
+                    <span class="text-danger" *ngIf="regForm.get('userEmail').touched && regForm.get('userEmail').invalid">
+                        <br>Invalid Email Address
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="fa fa-lock"></label>
+                    <input type="password" placeholder="Password" formControlName="userPassword">
+                    <span class="text-danger" *ngIf="regForm.get('userPassword').touched && regForm.get('userPassword').invalid">
+                        <br>Atleast 8 character Password is Required
+                    </span>
+                </div>
+
+                <div class="text-center">
+                    <button id="submitButton" type="submit" class="btn btn-danger" [disabled]="!regForm.valid">
+                        Register
+                    </button>
+                </div>
+                
+            </form>
+            <div id="snackbar">Registered Successfully... </div>
+        </div>
+    </div>
+</div>

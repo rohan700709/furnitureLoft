@@ -1,0 +1,201 @@
+<div style="background: #2d2e37;">
+    <header >
+        <div class="nav container" >
+            <a href="index.html" class="logo">
+                    Furniture<span>Loft</span>
+                </a>
+            <div class="search-box">
+                <input type="search" name="" id="search-input" [(ngModel)]="searchFurniture"  placeholder="Search Furniure">
+                <i class="bx bx-search" (click)="searchFurnitureItem()"></i>
+                <!-- <h3>{{searchFurniture}}</h3> -->
+            </div>
+            <!-- *ngIf="loggedIn() && role=='User'" -->
+            <li *ngIf="loggedIn() && role=='User'">
+                <input type="file" (change)="onFileSelected($event)" #fileInput style="display:none" accept="image/*" [(ngModel)]="selectedFile">
+                <button mat-icon-button (click)="fileInput.click()">
+                <!-- <img *ngIf="!imageUrl" src=".\.\assets\images.jpeg"   > -->
+                <img [src]="imageUrl" *ngIf="imageUrl" style="border-radius: 50%; border:2px solid #348b1a;">
+                </button>
+
+            </li>
+            
+            <div class="navbar" style="background: #1e1e2a; padding:25px 10px;border-radius: 60px; margin-top: 35px;">
+                <li >
+                    <a routerLink="" routerLinkActive=" active" [routerLinkActiveOptions]="{exact : true}" class="nav-link nav-active">
+                        <i class='bx bx-home'></i>
+                        <span class="nav-link-title" (click)="getAllFurniture()">Home</span>
+                    </a>
+                </li>
+                <li *ngIf="role=='User' && loggedIn()">
+                    <a  class="nav-link"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact : true}">
+                        <i class='bx bx-cart'></i>
+                        <span class="nav-link-title"   (click)="getAllCartFurnituree()">Cart</span>
+                    </a>
+                </li>
+                <li *ngIf="role=='User' && loggedIn()">
+                    <a  class="nav-link" routerLink="order"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact : true}">
+                        <i class='bx bx-history'></i>
+                        <span class="nav-link-title" (click)="getAllPlacedOrders()" >Orders</span>
+                    </a>
+                </li>   
+
+                <a href="admin-profile" class="nav-link" *ngIf="role=='Admin' && loggedIn()">
+                    <i class='bx bxs-user'></i>
+                    <span class="nav-link-title">Admin</span>
+                </a>
+                
+                <!-- <a href="javascript:void(0)" class="nav-link" >
+                    <i class='bx bx-trending-up'></i>
+                    <span class="nav-link-title" (click)="getLowToHigh()">Low to High</span>
+                </a>
+                <a href="javascript:void(0)" class="nav-link" >
+                    <i class='bx bx-trending-down'></i>
+                    <span class="nav-link-title" (click)="getHighToLow()">High to Low</span>
+                </a>
+                <a href="javascript:void(0)" class="nav-link" >    
+                    <i class='bx bx-star'></i>
+                    <span class="nav-link-title" (click)="getRatingBased()">Rating</span>
+                </a>
+                -->
+                <li *ngIf="!loggedIn()">
+                    <a routerLink="auth" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
+                        <i class='bx bx-log-in'></i>
+                        <span class="nav-link-title">Login</span>
+                    </a>
+                    <!-- <div id="snackbar">LoggedIn Successfully</div> -->
+                </li>
+                <li *ngIf="loggedIn()">
+                    <a (click)="logOut()" routerLink="" class="nav-link">
+                        <i class='bx bx-log-out'></i>
+                        <span class="nav-link-title">Logout</span>
+                    </a>
+                </li>                
+            </div>               
+        </div>        
+    </header>
+    <router-outlet> </router-outlet>
+    <!-- <app-bookmark *ngIf="flag2" [furnitureValue]="furnitureData"></app-bookmark> -->
+    <section class="home container" id="home" >
+        <img src="assets/home-cover.jpeg" alt="" class="home-img">
+        <div  class="home-text">
+            <h1 class="h1">Be Kind, Unwind<br>Explore 350+ Contemporary Furnitures</h1>
+            <p>Let's Design Your Dream Home</p>
+        </div>
+    </section>
+
+    <section class="best-selling ">
+        <div class="container">
+            <div class="best-selling-container">
+                <div class="sale-price">
+                    Sale <strong>14%</strong>
+                </div>                   
+                <div class="selling-col-1">
+                    <div class="selling-left">
+                        <ul>
+                            <li>
+                                <span class="count-date">{{days}}</span>
+                                <span class="count-day">Days</span> 
+                            </li>
+                            <li>
+                                <span class="count-date">{{hours}}</span>
+                                <span class="count-day">Hours</span> 
+                            </li>
+                            <li>
+                                <span class="count-date">{{mins}}</span>
+                                <span class="count-day">Mins</span> 
+                            </li>
+                            <li>
+                                <span class="count-date">{{secs}}</span>
+                                <span class="count-day">Secs</span> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>      
+                <div class="selling-col-2">
+                    <div class="selling-img">
+                       <img src="https://d3home.com/wp-content/uploads/2019/05/e1bcda03-d631-4791-b321-4cee039768e8.jpg" alt=""> 
+                    </div>
+                </div>
+                <div class="selling-col-3">
+                    <div class="selling-heading">
+                        <a href="javascript:void(0);">Bed</a>
+                        <div class="selling-rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                    </div>
+                    <p>Fresh Up Alberto Engineered Wood Box Bed With Storage, Upholstered Headboard-78x72inches Engineered Wood King Box Bed</p>
+                    <h3>
+                        <span class="selling-amount">$202.00</span>
+                        <span class="selling-discount">$230</span>
+                    </h3>
+                    <div class="selling-button">
+                        <a href="javascript:void(0)" class="selling-cart-btn ">
+                            <strong>Hurry Up!</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>               
+</div>
+    
+<body>
+   
+ 
+  <app-card *ngIf="flag1" [furnitureMultiData]="furnitureList"></app-card>
+  <app-bookmark *ngIf="flag2" [furnitureValue]="furnitureData"></app-bookmark>
+  <app-order *ngIf="flag3" [importOrder]="exportOrder"></app-order>
+  <!-- <router-outlet> </router-outlet> -->
+
+
+</body>              
+                
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">watch</a></li>
+                    <li><a href="#">bag</a></li>
+                    <li><a href="#">shoes</a></li>
+                    <li><a href="#">dress</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-facebook' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>                     
+
+

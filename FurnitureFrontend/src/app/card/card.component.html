@@ -1,0 +1,48 @@
+<section>
+  <div class="row " style="margin-left: 110px;">
+
+   
+    <div class="card" *ngFor="let list of furnitureMultiData | paginate : { itemsPerPage:8, currentPage: p }, let i = index">
+      <div class="imgBx">
+        <img src="../assets/img/{{list.furnitureName}}.png" alt="Sorry!! {{list.furnitureName}} Not Found">
+      </div>
+      <div id="snackbar" style="position: fixed !important;   z-index:10; bottom:80px; left:75% ; text-align: center;">Added to Cart... </div>
+
+      <div class="contentBx">
+        <h3>{{list.furnitureName}}</h3>
+        <h2 class="price">${{list.furniturePrice}}.<small>99</small></h2>
+        <p class="description">{{list.furnitureDescription}}</p>
+        <p class="rating">Rating: {{list.furnitureRating}}<i class="bx bxs-star star"></i></p>
+        <a href="javascript:void(0)" class="buy" *ngIf="loggedIn()" (click)="addToCart(list)"><i class="bx bxs-cart"></i> Add To Cart</a>
+      </div>
+      <!-- <div id="snackbar" style="position: absolute;">Added to Cart... </div> -->
+    </div>
+</div>
+</section>
+<pagination-controls (pageChange)="p=$event" class="float-right" style="margin-right: 500px; margin-top:33px ! important;"></pagination-controls>
+
+
+ 
+ 
+ 
+ <!-- <div class="row container">
+    <mat-card display="grid" class="example-card" class="col-4"  *ngFor="let list of furnitureMultiData;  let i = index">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{list.furnitureName}}</mat-card-title>
+          <mat-card-subtitle>@furnitureLOFT</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/{{list.furnitureName}}.jpg" alt="Sorry!! {{list.furnitureName}} Not Found ">
+        <mat-card-content>
+          <p>
+          {{list.furnitureDescription}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Price : ₹ {{list.furniturePrice}}</button>
+          <button mat-button>Rating : {{list.furnitureRating}}</button>
+          <button *ngIf="loggedIn()" class="bookmark" (click)="addToCart(list)"><i 
+                    class='bx bxs-bookmark-plus'></i></button>
+        </mat-card-actions>
+    </mat-card>
+  </div> -->

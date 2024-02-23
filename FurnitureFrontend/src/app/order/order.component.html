@@ -1,0 +1,27 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Time</th>
+      <th>Order Date</th>
+      <th>Invoice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of importOrder">
+      <td>{{ item.furnitureName }}</td>
+      <td>{{ item.furnitureQuantity }}</td>
+      <td>{{ item.furniturePrice }}</td>
+      <td>{{ item.furnitureDescription }}</td>
+      <td>{{item.orderTime}}</td>
+      <td>{{ item.orderDate }}</td>
+      <td><button  (click)="getFurnitureName(item.furnitureName)" >Download</button>
+      </td>
+    </tr>
+  </tbody>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</table>
